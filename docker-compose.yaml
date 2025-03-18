@@ -1,0 +1,16 @@
+services:
+  php:
+    container_name: inge-web-php
+    build:
+      context: .
+      dockerfile: conf/php/Dockerfile
+    restart: on-failure
+    ports:
+      - 50180:80
+    volumes:
+      - ./src/html:/var/www/html
+      - ./src/bean:/var/www/bean
+      - ./src/elfo:/var/www/elfo
+      - ./conf/apache:/etc/apache2
+    environment:
+      PHP_INI_SCAN_DIR: "/usr/local/etc/php/conf.d"
