@@ -1,6 +1,6 @@
 services:
   php:
-    container_name: inge-web-php
+    container_name: iw-php
     build:
       context: .
       dockerfile: conf/php/Dockerfile
