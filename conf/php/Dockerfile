@@ -1,10 +1,10 @@
-FROM debian:latest
+FROM debian:stable-slim
 
 # Met à jour les paquets et installe Apache + PHP
-RUN apt update && apt install -y \
+RUN apt-get update && apt-get install -y \
     apache2 \
-    # nginx \
     php libapache2-mod-php \
+    unzip git composer \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*
 
