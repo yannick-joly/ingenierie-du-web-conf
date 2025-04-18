@@ -2,8 +2,7 @@ services:
   php:
     container_name: iw-php
     build:
-      context: .
-      dockerfile: conf/php/Dockerfile
+      context: ./conf/php/
     restart: on-failure
     ports:
       - 50080:80
